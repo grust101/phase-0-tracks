@@ -12,3 +12,11 @@
 {
 	font-size: .8em;
 }
+
+h2:hover{
+	background-color: blue;
+}
+
+ul li{
+	background-color: red; 
+}
