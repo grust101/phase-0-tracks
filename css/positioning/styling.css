@@ -1,0 +1,22 @@
+.octopus {
+	 margin-right: 100px;
+	 margin-left: 500px;
+	 margin-top: 40px;
+
+}
+.garment {
+	display: inline-block;
+
+	
+}
+#glasses {
+	position: relative;
+	top: 220px;
+	left: 545px;
+}
+
+#hat{
+	position: fixed;
+	left: 490px;
+	top: 50px;
+} 
