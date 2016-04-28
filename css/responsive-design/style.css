@@ -68,3 +68,10 @@ figcaption {
     }
 }
 
+/* mobile-first design: responsive design.. making a website responsive firs
+Float: can collapse parent containers = issue; 
+float was created for a single purpose so when it comes to the entire document it requires a lot of troubleshooting.
+ Float elements places content either left or right inline. 
+ You cannot center floating items. 
+
+ Display is easier because you can "stack" elements side by side. Inline block can be a substitute. 
