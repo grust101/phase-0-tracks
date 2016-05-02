@@ -1,0 +1,25 @@
+Use an Elevator:
+- Walk to elevator doors.
+	-Press button and wait until elevator doors open.
+- Move forward until a elevator wall is reached (Wall A).
+- Move right along elevator walls (B,C,D) until button panel is reached.
+- Until desired floor number is found on button panel:
+    - Move hand left on bottom row (Row A) until corner of panel is reached.
+    - When corner is reached on panel, advance 2 inches 
+      up from bottom row (Row A), to the new buttons on second row (Row B).
+    - Move left in a straight line parallel to Row A on Row B in the opposite direction.
+    - Repeat on remaining rows of buttons until button that corresponds to desired floor is reached.
+- Stop, push button!
+
+ 
+ To start a fire:
+ - Place firewood and crumpled newspaper in fire pit
+ - Until fire ignights: 
+ 	- Until match lights:
+ 	 	-Strike match on match box 
+ 	 - Place lit match on crumpled paper 
+ 	 - Blow on developing flames to grow flames
+ If fire does not ignite:
+ - Poke logs into new position
+ - Add more crumpled paper. 
+
