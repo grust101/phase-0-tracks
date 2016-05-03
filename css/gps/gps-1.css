@@ -1,0 +1,21 @@
+header,body, section {outline: 1px solid white;}
+
+header {
+  background-image: url(https://www.atlassian.com/git/images/atlassian-getting-git-right.jpg);
+  padding: 10px;
+}
+
+body {
+  font-family: Helvetica; 
+}
+
+section {
+  display: inline-block;
+  vertical-align: top;
+  border: solid;
+  margin: 30px;
+  width: 30%;
+  background-color:aqua;
+  padding: 20px;
+  
+}
