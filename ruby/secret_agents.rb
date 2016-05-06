@@ -36,6 +36,8 @@ def decrypt(password)
 	return decrypt_password
 end
 
+encypted_password = encrypt("abc")
+decrypt_edpassword = decrypt(encypted_password)
 
 
 
