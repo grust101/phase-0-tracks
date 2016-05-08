@@ -1,43 +1,62 @@
+=begin
+	-Ask the user to key in a word
+		-Loop through each letter of the word
+		-Change each letter to the next letter in the alphabet
+=end
+
 def encrypt(password)
-	index = 0 
-	encrypt_password = password
+	index = 0
 	while index < password.length
 		if password[index] == "z"
-			password[index]= "a"
-		elsif password[index] == " "
-			encrypt_password[index] = password[index]
+			password[index] = "`"
 		else
-			encrypt_password[index] = password[index].next
+			print password[index].next
 			index += 1
 		end
 	end
-	return encrypt_password
 end
 
+encrypt("abc")
+puts ""
+encrypt("zed")
+puts ""
+
+=begin
+	-Ask the user to key in a word
+		-Loop through each letter of the word
+		-Change each letter to the previous letter in the alphabet
+=end
 
 def decrypt(password)
 	index = 0
-	variable_range = "abcdefghijklmnopqrstuvwxyz"
-	varible_index = 0
-	decrypt_password = password
 	while index < password.length
-		if password[index] == " "
-			decrypt_password[index] = password[index]
-			index +=1
+		if password[index] == "a"
+			password[index] = "{"
 		else
-			until password[index] ==  variable_range[variable_index]
-			variable_index += 1
-			end
-			decrypt_password[index] = variable_range[variable_index - 1]
+			print (password[index].ord-1).chr
 			index += 1
 		end
-		variable_index = 0 
 	end
-	return decrypt_password
 end
 
-encypted_password = encrypt("abc")
-decrypt_edpassword = decrypt(encypted_password)
+decrypt("bcd")
+puts ""
+decrypt("afe")
+puts ""
 
+# Ask the for choice of encrypt or decrypt
+puts "Would you like to encrypt(e) or decrypt(d) a password?"
+choice = gets.chomp
 
+# Ask the user to input a password
+puts "Key in your password."
+password = gets.chomp.downcase
 
+# Convert password to the method of choice
+if choice == "e"
+	puts encrypt(password)
+elsif choice == "d"
+	puts decrypt(password)
+end
+
+puts "Have a nice day!"
