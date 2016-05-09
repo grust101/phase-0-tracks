@@ -1,0 +1,47 @@
+Week 4 Review and Reflection
+Georgia Rust
+
+
+Variables
+1. What is a variable? Why might a programmer use a variable?
+A variable is a reference name for information. Programmers would want to use variables because they are SO EFFICIENT. It makes it easy for programmers to continue coding and simply referencing variables to bring that same information to another section of code without having to type it all again. 
+2. If the value of first_name is "Abraham" and last_name is "Lincoln", explain the order in which Ruby will run the line full_name = first_name + last_name, and what the final result will be.
+Ruby will run the line above by first referencing first_name and then adding it to last_name and then take that data and create a new variable called Full_Name. It will give us the result Abraham Lincoln. 
+Data Types
+3. For each of the following data types, write a short definition and give at least one example of when you might use the data type in a program. (Don't use an example we've already provided.)
+• String - a string is a data type that outputs a word
+	• "Hey girl"
+• Integer - an integer is a data type that outputs a number
+	• 9
+• Float - a float is a data type that involves a number with decimals
+	• 2.43
+• Nil - a data type that give us a null answer instead of a data type: N/A
+	• nil
+• Boolean - data type that gives us a true or false result 
+	• Raining = true
+Algorithms
+4. What is an algorithm?
+An algorithm is essentially a road map for the computer to complete difficult tasks for us. It does that by following a formula we create. 
+5. What are two common categories of algorithm in computer science? 
+Two common types of algorithms are searching and sorting. Searching is the process of running a search until the desired answer is found. Sorting is taking data and formatting it to display things they way you want: largest to smallest, alphabetically, etc..
+Methods
+6. What is a method? Why might a programmer choose to use a method?
+A method is a statement or rule that is defined and then can be called again and again with different inputs. A programmer would use a method to avoid have to repeat steps that you know you will want to happen more than once. 
+7. Define the following terms as they relate to a method. 
+• return value - the result from a method accepting an argument and values
+• side effect - an error in a method that give you an altered output
+• Parameter - the guides that we keep the variables of methods in. 
+• Argument -  found inside a method and initiates the method. 
+• implicit return - the return you get from the argument within a method without calling 'return'
+8. What are global scope and method scope? How do those scopes impact the availability of data at different points in a program?
+Variables defined outside the parameters are on a global scope and content within the parameters of a method are considered inside the method scope. Any content within the method scope can affect the vairable output. 
+Control Flow
+9. What is control flow? Why might a programmer choose to use flow control?
+Control flow is the order in which statements and functions operate. Using flow control keeps things organized and easy to read to find errors. 
+10. Define the following terms as they relate to flow control.
+• Loop - a loop is used when a block of code needs to be used a certain number of times
+• If - a conditional statement 
+• Else - conditional statement that says that if data doesn’t match an if or elsif condition it gives and else output
+• Elsif -  conditional statement 
+• While - a loop that repeats while a block of code is a certain way
+• Until - a loop that repeats until an input becomes a certain way
