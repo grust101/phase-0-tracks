@@ -49,9 +49,10 @@ while (input != "none")
 		# nothing will happen
 	elsif client_data.fetch(input.to_sym, false)
 		puts "Enter correct input for #{input_to_update}"
-		client_data{input_to_update.to_sym} = gets.chomp
+		client_data[input_to_update.to_sym] = gets.chomp
 	else
-		
+		puts "Enter value for #{input_to_update}"
+		client_data[input_to_update.to_sym] = gets.chomp
 	end
 end
 
