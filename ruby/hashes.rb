@@ -44,15 +44,15 @@ while (input != "none")
 		puts "#{key}: #{value}"
 	}
 	p "If there's any information that needs editing please type the category (name, age, number of children, decor style)"
-	input_to_update = gets.chomp
-	if input_to_update == "none"
-		# nothing will happen
+	input = gets.chomp
+	if input == "none"
+		puts "welcome to Georgia Rust designs!"
 	elsif client_data.fetch(input.to_sym, false)
 		puts "Enter correct input for #{input_to_update}"
-		client_data[input_to_update.to_sym] = gets.chomp
+		client_data[input.to_sym] = gets.chomp
 	else
 		puts "Enter value for #{input_to_update}"
-		client_data[input_to_update.to_sym] = gets.chomp
+		client_data[input.to_sym] = gets.chomp
 	end
 end
 
