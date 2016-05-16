@@ -1,0 +1,31 @@
+Georgia Rust
+
+
+
+Data Structures
+1. Why are data structures useful in programming?
+They help improve the efficiency of creating algorithms!
+Arrays
+2. Define "array" and describe the characteristics of an array.
+An array is an integer indexed collection of objects. They contain array = []
+3. Give two original examples of data sets that an array might be well-suited for.
+Different phone numbers
+Different zip codes
+Hashes
+4. Define "hash" and describe the characteristics of a hash.
+Collection of key and values that uses any data type
+5. Give two original examples of data sets that a hash might be well-suited for.
+Listing family members and their age
+Listing grocery items and quanity
+
+Iteration
+6. Why is iteration useful?
+You can access a large amount of data in a more efficient manner throughout your code
+7. Give an example of a real-life task that would require iteration if you wrote an algorithm for it.
+Making guacamole! You could use a hash to list all the ingredients and quantity of them and then use iteration to access the keys and values later in your code. 
+
+Blocks
+8. What is a block?
+Moveable code that can be run repeatedly. Doesn’t have a name!
+9. What is a block parameter, and where does its value come from?
+A block parameter inside a pipe and is dependent on the method you're calling. 
