@@ -1,27 +1,29 @@
 # write calc method
-# takes 2 parameters: integer, operator string, and another integer
-
-def adding_int(operation_input)
-	seperate = operation_input.split
+# takes 3 parameters: integer, operator string, and another integer
+# makes calculations for operators + - / * 
 
 
+def calculate(operation)
+	new_operation = operation.split(",")
+	
+	
 	end
-
-
-
-
-#p adding_int("4, +, 5")
-
-
-input = ''
-while input != 'exit'
-	p "Please enter the equation you want me to solve!"
-	input = gets.chomp
-	if input != 'exit'
-		output = "Answer:" + adding_int(input)
-		p output
-	else
-		p "Goodbye!"
-
-	end
+	
 end
+
+
+ p calculate("4, +, 5")
+
+
+# input = ''
+# while input != 'done'
+# 	p "Please enter the equation you want me to solve! (Enter 'done' when you've had enough)"
+# 	input = gets.chomp
+# 	if input != 'done'
+# 		output = "Answer:" + adding_int(input)
+# 		p output
+# 	else
+# 		p "Goodbye!"
+
+# 	end
+# end
