@@ -38,7 +38,7 @@ society = {
 	}
 }
 
-p society[:upper_class][:name_called].upcase
+#p society[:upper_class][:name_called].upcase
 p society[:upper_class][:quotes].push("Whoever said money can't buy happiness has never been to Monte Carlo")
 p society[:middle_class][:quotes][1]
 p society[:lower_class][:asset]
