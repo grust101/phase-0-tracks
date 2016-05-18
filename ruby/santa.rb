@@ -2,7 +2,11 @@
 # 1. holiday phrase 
 # 2. cookie phrase - he loves all cookies. 
 
-class Santa 
+class Santa
+	attr_reader :age
+	attr_accessor :gender, :ethnicity, :age
+
+
 	def initialize(gender, ethnicity)
 		@gender = gender
 		@ethnicity = ethnicity
@@ -29,34 +33,40 @@ class Santa
 
 
 # Attribute changing methods
-def celebrate_birthday
-	age = @age + 1
-	p "Santa is now #{age} years old!"
-end
+	def celebrate_birthday
+		age = @age + 1
+		p "Santa is now #{age} years old!"
+	end
 
-def get_mad_at(name)
-	if @reindeer_ranking.include?(name) == true
-	 index_to_rotate = @reindeer_ranking.index(name)
-	 p @reindeer_ranking.insert(8, @reindeer_ranking.delete_at(index_to_rotate))
-	else
-		p "No one's in trouble"
-end	
+	def get_mad_at(name)
+		if @reindeer_ranking.include?(name) == true
+		 index_to_rotate = @reindeer_ranking.index(name)
+		 p @reindeer_ranking.insert(8, @reindeer_ranking.delete_at(index_to_rotate))
+		else
+			p "No one's in trouble"
+	end	
 
-# Create a setter method that allows @gender to be reassigned outside the class def
-def gender= (new_gender)
-	@gender = new_gender
-end
+	# Getter methods for age and ethnicity
 
-# Getter methods for age and ethnicity
+	# def age
+	# 	@age
+	# end
 
-def age
-	@age
-end
+	# def ethnicity
+	# 	@ethnicity
+	# end
 
-def ethnicity
-	@ethnicity
-end
+	# def gender
+	# 	@gender
+	# end
+ # #Create a setter method that allows @gender to be reassigned outside the class def
+	# def gender=(new_gender)
+	# 	@gender = new_gender
+	# end
 
+	# def ethnicity=(new_ethnicity)
+	# 	@ethnicity = new_ethnicity
+	# end
 end
 
 santa = Santa.new("Cis Female", "Asian American")
@@ -65,21 +75,38 @@ santa.speak
 santa.eat_milk_and_cookies("Snickerdoodle")
 santa.celebrate_birthday
 santa.get_mad_at("Vixen")
-
-santa.gender= "African American"
-p "Santa is #{santa.gender}."
-
 p " Santa is #{santa.age} years old!"
+
 p "Santa's ethnicity is #{santa.ethnicity}."
+santa.ethnicity= "White"
+p "Santa's ethnicity is now #{santa.ethnicity}"
+
+
+p "Santa's gender is #{santa.gender}."
+santa.gender= "Male"
+p "Santa's gender is now #{santa.gender}"
+
+end
 
 
 
-# santa = []
+index= 0
+gender_options = ["female", "male", "agender", "bigender", "cis female", "male"]
+ethnicity_options = ["Hispanic", "Asian American", "African American", "Perfer not to answer", "White"]
+age_range = (0..140)
+santa_array = []
 
-# gender_options = ["female", "male", "agender", "bigender", "cis female", "male"]
-# ethnicity_options = ["Hispanic", "Asian American", "African American", "Perfer not to answer", "White"]
-# gender_options.length.times do |i|
-# 	santa << Santa.new(gender_options[i], ethnicity_options[i])
+until index == 100
+	santa = Santa.new(gender_options, ethnicity_options)
+	p santa.gender = gender_options.sample
+	p santa.ethnicity = ethnicity_options.sample
+	p santa.age = rand(age_range)
+	index += 1
+	santa_array << santa
+end
+
+
+
 
 
 
@@ -100,4 +127,3 @@ p "Santa's ethnicity is #{santa.ethnicity}."
 # end
 
 
-end
