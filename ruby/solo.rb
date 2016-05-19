@@ -6,7 +6,7 @@
 
 class Barista 
 	attr_reader :name, :age, :drink_can_make
-	attr_accessor :place_of_work, :drink
+	attr_accessor :place_of_work, :drink, :name
 
 	def initialize(name, place_of_work, drink)
 		@name = name
@@ -106,7 +106,8 @@ place_of_work_option = @place_of_work
 drink_option = @drink
 barista_array = []
 
-until input == "done"
+while input != "done"
+	input = gets.chomp
 	barista = Barista.new(name_option, place_of_work_option, drink_option) 
 	p "What is your name?"
 	name_option = gets.chomp
@@ -118,7 +119,14 @@ until input == "done"
 	drink_option = gets.chomp
 
 
-	barista.welcome 
+	barista.place_of_work = place_of_work_option
+	barista.name = name_option
+	barista.drink = drink_option
+	
+p "Here is what your barista spiel sounds like: "
+	barista.welcome
+	barista.take_order
+
 	 
 	barista_array << barista
 	 
