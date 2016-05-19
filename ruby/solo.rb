@@ -5,7 +5,7 @@
 # LOGIC
 
 class Barista 
-	attr_reader :name, :age, :drink_can_make
+	attr_reader :age, :drink_can_make
 	attr_accessor :place_of_work, :drink, :name
 
 	def initialize(name, place_of_work, drink)
@@ -42,6 +42,7 @@ class Barista
 		p "Barista Information: "
 		p "Name: #{@name}"
 		p "Place of Work: #{@place_of_work} "
+		p "Age: #{@age}"
 		p bottom_line
 	end
 
@@ -107,7 +108,6 @@ drink_option = @drink
 barista_array = []
 
 while input != "done"
-	input = gets.chomp
 	barista = Barista.new(name_option, place_of_work_option, drink_option) 
 	p "What is your name?"
 	name_option = gets.chomp
@@ -122,11 +122,13 @@ while input != "done"
 	barista.place_of_work = place_of_work_option
 	barista.name = name_option
 	barista.drink = drink_option
+
+	barista.about_barista
 	
 p "Here is what your barista spiel sounds like: "
 	barista.welcome
 	barista.take_order
-
+input = gets.chomp
 	 
 	barista_array << barista
 	 
