@@ -118,67 +118,108 @@
 #     end
 
 
-# LOGIC
+# # LOGIC
 
-def add_room_to_house!(house, room_name)
-   return false if house.keys.length == 5
-    house[room_name] = []
-    return true
+# def add_room_to_house!(house, room_name)
+#    return false if house.keys.length == 5
+#     house[room_name] = []
+#     return true
+# end
+
+# def add_item_to_room!(house, room_name, item_name)
+#     house[room_name] << item_name
+# end
+
+# house = {}
+
+# #USER INTERFACE
+
+# def print_house(house)
+#     puts "--------"
+#     puts "Current house configuration:"
+#     house.keys.each_with_index do |room_name, index|
+#         puts  "#{index} - #{room_name}: #{house[room_name]}"
+#    end
+#    puts "--------"
+# end
+
+# # Let the user add rooms
+# can_add_rooms = true
+
+# # stop loop when rooms cannot be added
+# while can_add_rooms
+# # Get a room name from the user 
+# puts "Type the name of a room to add (or type 'done'):"
+# room_name = gets.chomp
+# # if the user is done, stop loop
+# break if room_name == 'done'
+# # otherwise add the room to the house
+# can_add_rooms = add_room_to_house!(house, room_name)
+# if !can_add_rooms
+#     puts "Sorry, that's too many rooms!"
+# print_house(house)
+# end
+
+
+
+
+# # Let the user add rooms
+# # In an infinite loop:
+# loop do 
+#     #ask the user for the number of the room they want to add items to
+#     puts "Enter the room number of the room to add an item to (or type 'done')"
+#     inputted_idx = gets.chomp
+#     # if the user is done, break
+#     break if inputted_idx == 'done'
+#     # otherwise, add item to room
+#     room_index = inputted_idx.to_i 
+#     puts "Enter the item to add:"
+#     item_to_add = gets.chomp
+#     add_item_to_room!(house, house.keys[room_index], item_to_add)
+#     # print house
+#     print_house(house)
+# end
+
+
+# Create encrypt method
+    # takes a string and advances every letter one letter forward
+        # "abc" becomes "bcd"
+    # any space chacter remains unchanged
+
+def encrypt(password)
+    index = 0
+    while index < password.length
+        if password[index] == "z"
+            password[index] = "a"
+        else
+            password[index] = password[index].next
+        end
+    index += 1
+    end
+    return password
 end
 
-def add_item_to_room!(house, room_name, item_name)
-    house[room_name] << item_name
-end
+# TEST CODE
+p encrypt("abc")
 
-house = {}
 
-#USER INTERFACE
+# Decrypt method to reverse process above
 
-def print_house(house)
-    puts "--------"
-    puts "Current house configuration:"
-    house.keys.each_with_index do |room_name, index|
-        puts  "#{index} - #{room_name}: #{house[room_name]}"
-   end
-   puts "--------"
-end
+def decrypt(password)
+    range = "abcdefghijklmnopqrstuvwxyz"
+     range_change = range.split(" ").reverse
+     
 
-# Let the user add rooms
-can_add_rooms = true
-
-# stop loop when rooms cannot be added
-while can_add_rooms
-# Get a room name from the user 
-puts "Type the name of a room to add (or type 'done'):"
-room_name = gets.chomp
-# if the user is done, stop loop
-break if room_name == 'done'
-# otherwise add the room to the house
-can_add_rooms = add_room_to_house!(house, room_name)
-if !can_add_rooms
-    puts "Sorry, that's too many rooms!"
-print_house(house)
+    
 end
 
 
 
 
-# Let the user add rooms
-# In an infinite loop:
-loop do 
-    #ask the user for the number of the room they want to add items to
-    puts "Enter the room number of the room to add an item to (or type 'done')"
-    inputted_idx = gets.chomp
-    # if the user is done, break
-    break if inputted_idx == 'done'
-    # otherwise, add item to room
-    room_index = inputted_idx.to_i 
-    puts "Enter the item to add:"
-    item_to_add = gets.chomp
-    add_item_to_room!(house, house.keys[room_index], item_to_add)
-    # print house
-    print_house(house)
-end
+
+
+
+
 
 
 
