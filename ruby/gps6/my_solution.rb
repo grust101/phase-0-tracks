@@ -85,3 +85,7 @@ alaska.virus_effects
 
 #=======================================================================
 # Reflection Section
+
+# require_relative connects the state data to the my solution page so that  it can use the information from state data in my solution. Require is different in the way that you need to create the path.
+
+# Release 3: This syntax has a key and values and within the values there are 2 additional keys (that are actually symbols) and values. State_Data is a hash - but then the variable itself is specifc to ruby - just because of the way it's written.  
