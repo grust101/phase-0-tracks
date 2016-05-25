@@ -72,10 +72,18 @@ class VirusPredictor
 
 end
 
+
+
 #=======================================================================
 
 # DRIVER CODE
  # initialize VirusPredictor for each state
+
+ STATE_DATA.each do |state, pop_data| 
+  states = VirusPredictor.new(state, pop_data[:population_density], pop_data[:population])
+states.virus_effects
+end
+
 
 
 alabama = VirusPredictor.new("Alabama", STATE_DATA["Alabama"][:population_density], STATE_DATA["Alabama"][:population])
