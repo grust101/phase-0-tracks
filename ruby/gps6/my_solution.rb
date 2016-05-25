@@ -10,12 +10,15 @@ require_relative 'state_data'
 
 class VirusPredictor
 
+# initializes variables given by the state_data file (key and value)
   def initialize(state_of_origin, population_density, population)
     @state = state_of_origin
     @population = population
     @population_density = population_density
   end
 
+
+# outputs data using predicted death and speed of spread methods by using the attribute variables as parameters
   def virus_effects
     predicted_deaths(@population_density, @population, @state)
     speed_of_spread(@population_density, @state)
@@ -23,6 +26,8 @@ class VirusPredictor
 
   private
 
+
+# looks at the population_density and then runs the math of number of deaths using population and rounding down to nearest full interger
   def predicted_deaths(population_density, population, state)
     # predicted deaths is solely based on population density
     if @population_density >= 200
@@ -40,6 +45,9 @@ class VirusPredictor
     print "#{@state} will lose #{number_of_deaths} people in this outbreak"
 
   end
+
+
+# looks at the population_density and then returns string based on population_density value from state_data
 
   def speed_of_spread(population_density, state) #in months
     # We are still perfecting our formula here. The speed is also affected
@@ -88,4 +96,4 @@ alaska.virus_effects
 
 # require_relative connects the state data to the my solution page so that  it can use the information from state data in my solution. Require is different in the way that you need to create the path.
 
-# Release 3: This syntax has a key and values and within the values there are 2 additional keys (that are actually symbols) and values. State_Data is a hash - but then the variable itself is specifc to ruby - just because of the way it's written.  
+# Release 3: This syntax has a key and values and within the values there are 2 additional keys (that are actually symbols) and values. State_Data is a hash - but then the variable itself is specifc to ruby  and it is a constant- just because of the way it's written.  
