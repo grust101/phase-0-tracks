@@ -6,8 +6,6 @@
 
 //return the string
 
-var store_string = reverse(str);
-
 function reverse(str) { 
 	return str.split('').reverse().join('')
 }
@@ -15,5 +13,5 @@ function reverse(str) {
 var storeVar = reverse("hello");
 
 if (storeVar.length > 0){
-	consul.log(storeVar)
+	console.log(storeVar)
 }
