@@ -21,8 +21,9 @@ class VirusPredictor
 # outputs data using predicted death and speed of spread methods by using the attribute variables as parameters
   def virus_effects
     predicted_deaths(@population_density, @population, @state)
-    speed_of_spread(@population_density, @state)
   end
+
+
 
   private
 
@@ -44,6 +45,7 @@ class VirusPredictor
 
     print "#{@state} will lose #{number_of_deaths} people in this outbreak"
 
+    speed_of_spread(population_density, state)
   end
 
 
