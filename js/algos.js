@@ -27,19 +27,30 @@ for (var i = 0; i < array.length; i++) {
 // print the longest var
 console.log(longest);
 
+
+
 var input1 = { name: "Steven", age: "54"};
 var input2 = { name: "Tamir", age: "54"};
 
 
-
+// loop through ont input to see if it shares data with the other
 function shared_var(input1, input2){
 	for (var key in input1) {
 		if (input2.hasOwnProperty(key)) {
+			// if input inside the hashes overlaps - print true
 			if (input1[key] == input2[key]) return true; 
 
 		}
 	}
+
+	// otherwise print false
 	return false
 }
 
+
+//print if inputs share data as a boolean
 console.log(shared_var(input1, input2))
+
+
+
+
