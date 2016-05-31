@@ -1,0 +1,114 @@
+Review and Reflect 
+Week 6
+Georgia Rust
+
+
+
+1. What are classes? Be sure to define the following terms in your explanation and describe the relationships between them:
+• Class
+	• An object that contains attributes, instances, and methods to behave a certain way. 
+	• Essentially the blueprint for creating individual objects
+		class People
+		end
+	• Owns all instances, mehtods, attributes within itself
+• state: a class creates the ability for instances to have a state and a behavoir
+	• Characteristics/data of an instance
+• behavior: a class creates the ability for instances to have a state and a behavoir
+	• how an instance will act based on the definitions given by the class
+• instance variable: objects can have a class and an instance variable
+	• class can have instance variable
+			class People
+				@women = women
+			end
+	• Instance variables have @ in front 
+	• With an instance variable on a class you can store something common to that class without having sub-classes automatically also get them (and vice-versa). 
+• instance method
+	• methods called on instance  - anytime you call a method on a string, array, or integer you are calling an instance method
+		○ speak.upcase
+		○ str += "huh?"
+2. What are attributes?
+• Same as state - piece of information to describe an object
+	• age, height, hair color, length...
+	• variable stored inside of a class declaration
+	• each instance has its own attribute data
+		○ if they didnt, all memeber of the class would have the same data
+	@women = women 
+	Instance variable 
+	Attribute
+	- By the example above we see that attributes contain instance variables
+3. Give an example of a real world object, and describe how you might assign its attributes if you were to design a class to represent that object.
+class Cars
+Attributes to assign: 
+	- # of wheels
+	- type of engine
+	- # of seats
+	- color
+	- gas milage
+class Cars
+	def initialize(wheels, color)
+		@wheels = wheels
+		@color = color
+		@engine_type = "4 Cylinder"
+		@number of seats = 4
+	end
+	def vroom(engine_type)
+		p "My car has a #{engine_type} engine."
+	end
+	cars = Cars.new(4, "blue")
+4. What is the purpose of the initialize method? When does it run?
+The initialize method can give default values to the instance variables. It runs at the beginning of the class. Tuns at the beginning. The scope goes through all instance methods!
+5. What are modules?
+modules are compartimentalized sets of related methods. 
+example: barista knows how to make different drinks over and over again so there might be a module for the amount of bean to add, time to steam milk, and method of pouring the drink. 
+6. What are the different ways you can use a module?
+Namespacing: when you call a method on a module
+	- somemodule.method
+Mixin: when modules are mixed into classes to give a class more funcitonality 
+	Access modules through IRB
+	example: Math 
+		Math.sqrt(4)
+		=> 2.0
+Writing modules: 
+step 1: Declare the module: 
+module Smile
+end
+step 2: In IRB, go to the directory that contains 'Smile' and run: 
+require_relative 'smile'
+Smile.singleton_methods 
+	- Notice we don't have any methods for it yet!!
+Step 3: Create a method for your module
+• SYNTAX:  the methods of standalone modules (not a mixin) must be defined on the self keyword.
+	def self.laugh(noise)
+		noise + "!!!!!"
+	end
+Step 4: Driver code to call a module method
+Class.method(parameter)
+Smile.laugh("HAHAHA")
+
+MIXIN MODULES: 
+step 1: Declare the classes
+class Sports_Car
+end
+class Cheetah
+end
+Step 2: write a 'fast' module (will apply to both classes)
+module Fast
+	def travel(mph)
+	p "Moves up to : #{mph}"
+	end
+end
+
+Step 3: add module to both classes
+class Sports_Car
+	include Fast
+end
+class Cheetah
+	include Fast
+end
+Step 4: Add Driver Code
+
+sportscar  =  Sports_Car.new
+sportscar.travel(200)
+
+cheetah = Cheetah.new
+cheetah.travel(60)
