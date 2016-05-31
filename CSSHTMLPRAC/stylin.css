@@ -1,0 +1,81 @@
+html {
+	display: inline-block;
+}
+
+
+body {
+	background-color: pink;
+	max-width: 100%;
+	min-width: 25%;
+}
+
+h1 {
+	font-family: Georgia;
+	font-style: italic;
+	color: white;
+}
+
+/*make something go to the side*/
+table {
+	position: absolute;
+	top: 17em; bottom: 0; right: 0;
+	color: grey;
+	background-color: white;
+}
+
+th {
+	font-size: 150%;
+}
+
+li {
+	list-style-type: square;
+
+}
+
+.main {
+	width: 50%;
+}
+.images {
+	margin: 20px;
+	vertical-align: top;
+
+
+}
+
+#image1 {
+	position: absolute;
+	top: 10px;
+}
+
+#image2 {
+	position: relative; 
+	top: 5px;
+	left: 250px;
+}
+
+#image3 {
+	position: relative;
+	top: 10px;
+	left: 250px;
+}
+
+#image4 {
+	position: relative;
+	bottom: 400px;
+	left: 550px;
+
+}
+
+@media screen and (max-width: 200px) {
+    body {
+        font-size: smaller;
+    }
+  }
+
+
+
+@media screen and (max-width: 500px) {
+    body {
+        background-color: blue;
+    }
+  }
