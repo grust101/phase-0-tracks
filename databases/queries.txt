@@ -1,0 +1,74 @@
+
+
+RELEASE 2. 
+1. 
+sqlite> SELECT * FROM models;
+Gigi Hadid|5.1|true|1
+Kendall Jenner|5.1|false|3
+Karly Kloss|6.02|true|6
+Cara DeLevingne|5.08|true|4
+Molly Bair|6|true|1
+Ine Neefs|5.09|false|2
+Lineisy Montero|5.11|false|5
+sqlite> 
+
+2. 
+
+UPDATE models SET height=6.0 WHERE name="Kendall Jenner";
+
+3. 
+
+sqlite> SELECT * FROM models, shows_walked_in WHERE models.show_id=shows_walked_in.show_id;
+Gigi Hadid|5.1|true|1|Chanel|1
+Kendall Jenner|6|false|3|Dior|3
+Karly Kloss|6.02|true|6|Sonia Rykiel|6
+Cara DeLevingne|5.08|true|4|Burberry|4
+Molly Bair|6|true|1|Chanel|1
+Ine Neefs|5.09|false|2|Marc Jacobs|2
+Lineisy Montero|5.11|false|5|Jeremy Scott|5
+
+4. 
+sqlite> SELECT models.name, shows_walked_in.designer FROM models JOIN shows_walked_in ON models.show_id = shows_walked_in.show_id;
+Gigi Hadid|Chanel
+Kendall Jenner|Dior
+Karly Kloss|Sonia Rykiel
+Cara DeLevingne|Burberry
+Molly Bair|Chanel
+Ine Neefs|Marc Jacobs
+Lineisy Montero|Jeremy Scott
+sqlite> 
+
+5. DELETE FROM models WHERE height<5.1;
+
+
+
+RELEASE 3
+
+1.
+ INNER JOIN - returns a record at an intersection between the two tables
+sqlite> SELECT shows_walked_in.designer, models.blonde_hair 
+   ...> FROM models
+   ...> INNER JOIN shows_walked_in
+   ...> ON models.show_id = shows_walked_in.show_id
+   ...> ;
+Chanel|true
+Dior|false
+Sonia Rykiel|true
+Chanel|true
+Jeremy Scott|false
+
+LEFT JOIN
+
+sqlite> SELECT shows_walked_in.designer, models.name, models.height
+   ...> FROM models
+   ...> LEFT JOIN shows_walked_in
+   ...> ON models.show_id = shows_walked_in.show_id
+   ...> ;
+Chanel|Gigi Hadid|5.1
+Dior|Kendall Jenner|6
+Sonia Rykiel|Karly Kloss|6.02
+Chanel|Molly Bair|6
+Jeremy Scott|Lineisy Montero|5.11
+sqlite> 
+
+
