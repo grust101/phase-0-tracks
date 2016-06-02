@@ -1,0 +1,28 @@
+RELEASE 2
+
+
+2.
+
+sqlite> SELECT *  FROM businesses JOIN reviews ON reviews.business_id = businesses.id JOIN users ON reviews.user_id = users.id;
+1|Grundy Hollow Wedding Chapel|1|5|AWESOME!|1|1|1|Bradford|Pitt
+2|Amir's Towing|2|3|Meh..okay.|2|2|2|Mandy|Kaling
+3|The Beagle Nightclub|3|0|NEVER GO HERE.|3|3|3|Angela|Jolie
+1|Grundy Hollow Wedding Chapel|4|4|GOOD!|1|3|3|Angela|Jolie
+3|The Beagle Nightclub|5|1|just no.|3|4|4|Steven|Wonder
+sqlite> 
+
+3. 
+
+sqlite> SELECT businesses.name, users.first_name, reviews.star, reviews.comment FROM businesses JOIN reviews ON reviews.business_id = businesses.id JOIN users ON reviews.user_id = users.id;
+Grundy Hollow Wedding Chapel|Bradford|5|AWESOME!
+Amir's Towing|Mandy|3|Meh..okay.
+The Beagle Nightclub|Angela|0|NEVER GO HERE.
+Grundy Hollow Wedding Chapel|Angela|4|GOOD!
+The Beagle Nightclub|Steven|1|just no.
+sqlite> 
+
+4. 
+sqlite> SELECT *  FROM businesses JOIN reviews ON reviews.business_id = businesses.id JOIN users ON reviews.user_id = users.id WHERE businesses.name = "The Beagle Nightclub";
+3|The Beagle Nightclub|3|0|NEVER GO HERE.|3|3|3|Angela|Jolie
+3|The Beagle Nightclub|5|1|just no.|3|4|4|Steven|Wonder
+sqlite> 
