@@ -3,6 +3,7 @@
 # require gems
 require 'sqlite3'
 require 'faker'
+require 'faker.rb'
 
 # create SQLite3 Database
 
@@ -31,7 +32,7 @@ end
 
 # create daily workout plan for the year
 365.times do 
-	create_workout(db, Faker::Name.name, Faker::Number.number(2))
+	create_workout(db, Faker::StarWars.vehicle, Faker::Number.between(1,100))
 end
 
 workout = db.execute("SELECT * FROM workout")
