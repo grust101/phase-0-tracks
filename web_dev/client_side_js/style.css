@@ -1,0 +1,13 @@
+h1 {
+	font-family: Georgia;
+	color: red;
+	text-align: center;
+}
+
+body {
+	background-color: gray;
+}
+
+p {
+	font-size: 20px; 
+}
