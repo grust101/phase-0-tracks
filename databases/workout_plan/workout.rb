@@ -3,7 +3,6 @@
 # require gems
 require 'sqlite3'
 require 'faker'
-require 'faker.rb'
 
 # create SQLite3 Database
 
@@ -15,7 +14,6 @@ db.results_as_hash = true
 create_table_cmd = <<-SQL
 	CREATE TABLE IF NOT EXISTS workout(
 		id INTEGER PRIMARY KEY, 
-		name VARCHAR(255),
 		reps INT
 		)
 SQL
@@ -23,21 +21,22 @@ SQL
 db.execute(create_table_cmd)
 
 # add test exercise
-def create_workout(db, name, reps)
-db.execute("INSERT INTO workout (name, reps) VALUES (?, ?)", [name, reps])
+def create_workout(db, reps, exercise)
+db.execute("INSERT INTO workout (reps) VALUES (?)", [reps])
 end
 
+exercises = [ "Crunches", "Push Ups", "Lunges", "Squats", "Squat Jumps", "Mountain Climber", "Burpees", "Lunge Jumps", "Calf Raisers", "Tricep Dips", "Arm Cirlces", "Bicycle abs", "Side Lunge", "Leg Lifts", "Jumping Jacks"]
 
 # add many different types of exercises
 
 # create daily workout plan for the year
 365.times do 
-	create_workout(db, Faker::StarWars.vehicle, Faker::Number.between(1,100))
+	create_workout(db, Faker::Number.between(1,100), exercises.sample)
 end
 
 workout = db.execute("SELECT * FROM workout")
 workout.each do |workout|
-	puts "Do #{workout['reps']} of #{workout['name']}"
+	puts "Today's workout: Do #{workout['reps']} #{exercises.sample} and #{workout ['reps']} #{exercises.sample}"
 end
 
 
