@@ -11,14 +11,24 @@ get '/:human/lives/:address' do
   "#{params[:human]} lives at #{params[:address]}"
 end
 
+# write a GET route using a query parameter to say "good jod #name" if query parameter not present print "good job"
+
+get '/' do 
+  name = params[:name]
+  if name
+    "Good job, #{name}!"
+  else
+    "Good job!"
+  end
+end
 
 
 # write a basic GET route
 # add a query parameter
 # GET /
-get '/' do
-  "#{params[:name]} is #{params[:age]} years old."
-end
+# get '/' do
+#   "#{params[:name]} is #{params[:age]} years old."
+# end
 
 # write a GET route with
 # route parameters
