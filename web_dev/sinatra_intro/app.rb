@@ -5,12 +5,30 @@ require 'sqlite3'
 db = SQLite3::Database.new("students.db")
 db.results_as_hash = true
 
+# write a GET route that displays an address
+
+get '/:human/lives/:address' do
+  "#{params[:human]} lives at #{params[:address]}"
+end
+
+# write a GET route using a query parameter to say "good jod #name" if query parameter not present print "good job"
+
+get '/' do 
+  name = params[:name]
+  if name
+    "Good job, #{name}!"
+  else
+    "Good job!"
+  end
+end
+
+
 # write a basic GET route
 # add a query parameter
 # GET /
-get '/' do
-  "#{params[:name]} is #{params[:age]} years old."
-end
+# get '/' do
+#   "#{params[:name]} is #{params[:age]} years old."
+# end
 
 # write a GET route with
 # route parameters
@@ -44,3 +62,6 @@ get '/students/:id' do
   student = db.execute("SELECT * FROM students WHERE id=?", [params[:id]])[0]
   student.to_s
 end
+
+
+
